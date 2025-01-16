@@ -1,0 +1,45 @@
+# The final result prints "Slist" is the same as RealList (The initial list)
+import random 
+
+GeneratedList = random.randint(1, 15)
+RealList = []
+
+for i in range(1,GeneratedList+1):
+    RealList.append(i)
+
+
+
+RemoveNumberNumber = random.randint(1, len(RealList))
+del RealList[RemoveNumberNumber-1]
+
+print(RealList)
+
+def FindMissing(list):
+    Newlist = []
+    for i in range(1, GeneratedList+1):
+        Newlist.append(i)
+
+    for l in Newlist:
+        if l not in list:
+            list.append(l)
+
+    def SortTheList(Slist):
+        n = len(Slist)
+
+        for c in range(n):
+
+            min_index = c
+
+            for j in range(c+1, n):
+
+                if Slist[j] < Slist[min_index]:
+
+                    min_index = j
+
+            Slist[c], Slist[min_index] = Slist[min_index], Slist[c]
+
+        print(Slist)
+
+    SortTheList(list)
+
+FindMissing(RealList)
