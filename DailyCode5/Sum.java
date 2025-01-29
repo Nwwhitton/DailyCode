@@ -1,6 +1,6 @@
 import java.util.Scanner; 
 
-class CountDown {
+class Sum {
     static void myMethod() {
             Scanner input = new Scanner(System.in);
             System.out.println("Type an integer:");
